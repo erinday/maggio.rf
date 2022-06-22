@@ -1,0 +1,15 @@
+-
+  const robotsList = [
+    { agent: 'Yandex' },
+    { agent: 'Googlebot' },
+    { agent: 'Mail.Ru' },
+    { agent: '*' },
+  ]
+
+each robot, i in robotsList
+  | User-agent: #{robot.agent}
+  | Disallow: /*?
+  | Sitemap: #{URL}/sitemap.xml
+  if (i !== robotsList.length - 1)
+    | #{'\n'}
+  | #{'\n'}

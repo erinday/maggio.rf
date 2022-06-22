@@ -1,0 +1,28 @@
+-
+  const pathStatics = '/statics'
+  const pathImage = `${pathStatics}/images/`
+
+  function staticImage (image) {
+    return `${pathImage}${image}`
+  }
+
+  const pages = [
+    { view: 'index', name: 'Главная', style: 'home', priority: 1, link: '/' },
+  ]
+
+  function getPage (view) {
+    return pages.find(page => page.view === view)
+  }
+
+  function prefetchStyle () {
+    const style = []
+    const list = pages
+    const currentPage = getPage(VIEW)
+    list.forEach(page => {
+      if (page.view === currentPage.view) return
+      if (page.style && page.style === currentPage.style) return
+      if (!page.style) return style.push(page.view)
+      if (!style.includes(page.style)) style.push(page.style)
+    })
+    return style
+  }
