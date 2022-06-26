@@ -1,0 +1,58 @@
+-
+  const footerList = [
+    {
+      name: 'Maggio',
+      links: [
+        { name: 'Standart', link: '#' },
+        { name: 'Chef', link: '#' },
+        { name: 'Маслобойка', link: '#' },
+        { name: 'Пресс для сыра', link: '#' }
+      ]
+    }, {
+      name: 'Golden Smoker',
+      links: [
+        { name: 'Golden Smoker 90', link: '#' },
+        { name: 'Golden Smoker 250', link: '#' },
+        { name: 'Sous-Vide', link: '#' }
+      ]
+    }, {
+      name: 'Amber Buddy',
+      links: [
+        { name: 'Amber Buddy 15', link: '#' },
+        { name: 'Amber Buddy 20', link: '#' }
+      ]
+    }, {
+      name: '',
+      links: [
+        { name: 'Доставка', link: '#' },
+        { name: 'Оплата', link: '#' },
+        { name: 'Гарантия', link: '#' },
+        { name: 'Контакты', link: '#' },
+        { name: 'Публичная оферта', link: '#' }
+      ]
+    }
+  ]
+
+footer.footer
+  .footer__cont.cont
+    if VIEW === 'index'
+      .footer__logo
+        img.footer__logo-image(src=staticImage('footer/footer__logo.svg'), alt="", loading="lazy")
+    else
+      a.footer__logo(href="/")
+        img.footer__logo-image(src=staticImage('footer/footer__logo.svg'), alt="", loading="lazy")
+    each box in footerList
+      .footer__box
+        if box.name
+          span.footer__box-name.text-small= box.name
+        nav.footer__box-nav
+          each item in box.links
+            a.footer__link.text-small(href=item.link)= item.name
+    .footer__contacts
+      a.footer__number.text(href=phone.link)= phone.mask
+      span.footer__address.text-small= address
+      .footer__social
+        each social in socials
+          a.footer__social-link(href=social.link, title=social.name, target="_blank", rel="noopener nofollow")
+            img.footer__social-image(class=`footer__social-image_${social.mod}`, src=staticImage(`ic_${social.mod}_dark.svg`), loading="lazy")
+      span.footer__copyright.text-small © 2022 «Мастерская инноваций А. Чернядьев»

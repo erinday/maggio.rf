@@ -12,7 +12,7 @@ html(lang='ru')
     include header
     .wrapper
       block body
-    //include footer
+    include footer
     include scripts
     each style in prefetchStyle()
       link(rel="prefetch", href=`${pathStatics}/styles/${style}${PRODUCTION ? `-${HASH}` : ''}.css`, as="style")
