@@ -1,0 +1,45 @@
+-
+  const comparisonAnaloguesList = [
+    [ 'Объём камеры', { value: '90', point: 'л' }, { value: '52', point: 'л' }, { value: '64', point: 'л' }],
+    [ 'Номинальная мощность', { value: '2', point: 'кВт' }, { value: '2,2', point: 'кВт' }, { value: '2', point: 'кВт' }],
+    [ 'Марка стали', { value: 'AISI-430', point: '' }, '', { value: 'AISI-430', point: '' }],
+    [ 'Толщина металла', { value: '0,8...1,5', point: 'мм' }, { value: '0,3...1,2', point: 'мм' }, { value: '0,8...1,5', point: 'мм' }],
+    [ 'Макс. рабочая температура', { value: '120°', point: 'С', better: true }, { value: '100°', point: 'С' }, { value: '110°', point: 'С' }],
+    [ 'Условия эксплуатации', { value: '5°...35°', point: 'С' }, { value: '15°...35°', point: 'С' }, { value: '5°...35°', point: 'С' }],
+    [ 'Макс. количество решеток', { value: '12', point: 'шт' }, { value: '2', point: 'шт' }, { value: '8', point: 'шт' }],
+    [ 'Расстояние между решетками', { value: '55', point: 'см' }, { value: '64', point: 'см' }, { value: '32', point: 'см' }],
+    [ 'Габариты камеры, Ш×Г×В ', { value: '360×335×1370', point: 'мм' }, { value: '360×335×1370', point: 'мм' }, { value: '360×335×1370', point: 'мм' }],
+    [ 'Габариты камеры в упаковке', { value: '540×540×1460', point: 'мм' }, { value: '540×540×1460', point: 'мм' }, { value: '540×540×1460', point: 'мм' }],
+    [ 'Габариты в сборе', { value: '810×600×1370', point: 'мм' }, { value: '810×600×1370', point: 'мм' }, { value: '810×600×1370', point: 'мм' }],
+    [ 'Габариты внутри', { value: '300×300×1090', point: 'мм' }, { value: '300×300×1090', point: 'мм' }, { value: '300×300×1090', point: 'мм' }],
+    [ 'Вес камеры', { value: '56,9', point: 'кг' }, { value: '45,2', point: 'кг' }, { value: '82,9', point: 'кг' }],
+    [ 'Вес брутто', { value: '66,3', point: 'кг' }, { value: '63,3', point: 'кг' }, { value: '76,3', point: 'кг' }],
+    [ 'Гарантия', { value: '12', point: 'месяцев' }, { value: '6', point: 'месяцев' }, { value: '12', point: 'месяцев' }],
+    [ 'Срок службы', { value: '10', point: 'лет' }, { value: '5', point: 'лет' }, { value: '5', point: 'лет' }]
+  ]
+
+.comparison-analogues
+  .comparison-analogues__cont.cont
+    .comparison-analogues__area
+      h2.comparison-analogues__title.title
+        | СРАВНИТЕ С АНАЛОГАМИ
+      span.comparison-analogues__note.text-big.txs-i
+        | И убедитесь, что выбираете лучшее
+      .comparison-analogues__wrapper
+        table.comparison-analogues__table
+          thead
+            tr
+              th.comparison-analogues__head_1
+              th.comparison-analogues__head.comparison-analogues__head_active.comparison-analogues__head_2.headline GOLDEN SMOKER
+              th.comparison-analogues__head.comparison-analogues__head_3.headline КТД-300
+              th.comparison-analogues__head.comparison-analogues__head_4.headline Beste Wurst 12
+          tbody
+            each item in comparisonAnaloguesList
+              tr.comparison-analogues__row
+                each point, index in item
+                  td.comparison-analogues__item.text
+                    if !index
+                      span.comparison-analogues__name= point
+                    else if point
+                      span.comparison-analogues__value(class=point.better ? 'comparison-analogues__value_better':'')= point.value
+                      span.comparison-analogues__point= point.point
