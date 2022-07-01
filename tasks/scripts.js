@@ -19,7 +19,7 @@ const webpackConfig = function () {
     output: {
       filename: env.production ? `script-${env.hash}.js` : 'script.js',
     },
-    devtool: env.production ? '' : 'source-map',
+    devtool: env.production ? false : 'source-map',
     module: {
       rules: [
         {

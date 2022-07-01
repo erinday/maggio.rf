@@ -1,0 +1,15 @@
+User-agent: Yandex
+Disallow: /*?
+Sitemap: https://sitesitesite.ru/sitemap.xml
+
+User-agent: Googlebot
+Disallow: /*?
+Sitemap: https://sitesitesite.ru/sitemap.xml
+
+User-agent: Mail.Ru
+Disallow: /*?
+Sitemap: https://sitesitesite.ru/sitemap.xml
+
+User-agent: *
+Disallow: /*?
+Sitemap: https://sitesitesite.ru/sitemap.xml

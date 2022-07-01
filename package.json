@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
-    "build": "cross-env NODE_ENV=production gulp build"
+    "build": "cross-env NODE_ENV=production gulp build",
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "dependencies": {
     "cross-env": "^7.0.3"
