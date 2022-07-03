@@ -1,0 +1,27 @@
+-
+  const productParams = [
+    { value: '90', unit: 'л', name: 'объем' },
+    { value: '30', unit: 'кг', name: 'вместимость <br> продукции' }
+  ]
+
+.product
+  .product__cont.cont
+    picture.product__picture
+      img.product__image(src="https://via.placeholder.com/764x1919", alt="")
+    .product__info
+      span.product__type Коптильная камера
+      .product__name
+        span.product__name-main GOLDEN SMOKER
+        span.product__name-other 90
+      ul.product__params
+        each param in productParams
+          li.product__params-item
+            .product__params-value
+              span.product__params-meaning= param.value
+              span.product__params-unit.text= param.unit
+            span.product__params-name!= param.name
+      .product__buy
+        .product__buy-price
+          span.product__buy-value 127 400
+          span.product__buy-unit ₽
+        button.product__buy-button.text-big(type="button") Купить
