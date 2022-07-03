@@ -1,0 +1,11 @@
+header.header
+  .header__cont.cont
+    if VIEW === 'index'
+      .header__logo
+        img.header__image(src=staticImage('logo.svg'))
+    else
+      a.header__logo(href=getPage('home').link)
+        img.header__image(src=staticImage('logo.svg'))
+    .header__contacts
+      a.header__phone.text(href=phone.link)= phone.mask
+      button.header__feedback.text-small(type="button") Заказать звонок

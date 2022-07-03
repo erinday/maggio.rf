@@ -39,7 +39,7 @@ footer.footer
       .footer__logo
         img.footer__logo-image(src=staticImage('footer/footer__logo.svg'), alt="", loading="lazy")
     else
-      a.footer__logo(href="/")
+      a.footer__logo(href=getPage('home').link)
         img.footer__logo-image(src=staticImage('footer/footer__logo.svg'), alt="", loading="lazy")
     each box in footerList
       .footer__box
