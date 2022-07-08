@@ -1,1 +1,1 @@
-console.log('YEp')
+import './components/easily-place'

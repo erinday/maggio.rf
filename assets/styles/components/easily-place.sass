@@ -1,0 +1,57 @@
+.easily-place
+  margin-bottom: 85px
+
+.easily-place__cont
+  position: relative
+  z-index: 1
+  padding-bottom: 684px
+
+.easily-place__title
+  max-width: 400px
+  margin-bottom: 19px
+
+.easily-place__note
+  max-width: 500px
+  font-style: italic
+
+.easily-place__gallery
+  position: absolute
+  top: -37px
+  left: 0
+  right: 0
+  z-index: -1
+
+//.easily-place__picture
+
+.easily-place__image
+  margin: 0 auto
+  width: 1292px
+  height: 940px
+
+.easily-place__list
+  position: absolute
+  right: 0
+  bottom: 95px
+  left: 0
+  z-index: 2
+  display: flex
+  justify-content: center
+
+.easily-place__item
+  border: none
+  margin: 0 1px
+  padding: 8px 16px 7px
+  background-color: $gray
+  user-select: none
+  cursor: pointer
+  transition-property: background-color
+  transition-duration: .2s
+  &:first-child
+    border-radius: 8px 0 0 8px
+  &:last-child
+    border-radius: 0 8px 8px 0
+
+.easily-place__item_active
+  background-color: $yellow
+  cursor: default
+  transition-duration: .1s

@@ -1,0 +1,24 @@
+-
+  const easilyPlaceList = [
+    { name: 'Кафе' },
+    { name: 'Кухня' },
+    { name: 'Дача' },
+    { name: 'Фастфуд' }
+  ]
+
+.easily-place(data-element="easily-place")
+  .easily-place__cont.cont
+    h2.easily-place__title.title
+      | ЛЕГКО РАЗМЕСТИТЬ
+    p.easily-place__note.text-big
+      | Компактные размеры коптильны подходят для разных помещений
+    .easily-place__gallery
+      picture.easily-place__picture
+        img.easily-place__image(src="https://via.placeholder.com/1292x940", loading="lazy", alt="")
+      .easily-place__list
+        each item, index in easilyPlaceList
+          button.easily-place__item.text(
+              type="button",
+              class=index ? '' : 'easily-place__item_active',
+              data-element="easily-place__item"
+            )= item.name
