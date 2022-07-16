@@ -1,0 +1,134 @@
+.complete
+  margin-bottom: 116px
+  overflow: hidden
+
+//.complete__cont
+
+.complete__title
+  margin-bottom: 33px
+  text-align: center
+
+.complete__variants
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  margin-bottom: 95px
+
+.complete__variants-item
+  position: relative
+  margin: 0 2px
+  &:first-child
+    .complete__variants-name
+      &::before
+        border-top-left-radius: 8px
+        border-bottom-right-radius: 8px
+  &:last-child
+    .complete__variants-name
+      &::before
+        border-top-right-radius: 8px
+        border-bottom-right-radius: 8px
+
+.complete__variants-item_active
+  .complete__variants-name
+    &::before
+      top: -2px
+      bottom: -2px
+      border-radius: 8px
+      background: linear-gradient(180deg, #FFE4B9 0%, #FED189 4.09%, #F8B549 100%)
+  .complete__variants-note
+    z-index: 1
+    opacity: 1
+
+.complete__variants-name
+  position: relative
+  display: block
+  width: 280px
+  padding: 11px 12px 11px
+  text-align: center
+  font-weight: 700
+  cursor: pointer
+  user-select: none
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: -1
+    background-color: $gray
+
+.complete__variants-note
+  position: absolute
+  top: 100%
+  left: -20px
+  right: -20px
+  margin-top: 18px
+  opacity: 0
+  z-index: -1
+  text-align: center
+  font-size: 24px
+  font-style: italic
+  line-height: 24px
+
+.complete__variants-price
+  position: absolute
+  top: 0
+  display: none
+
+.complete__area
+  display: flex
+  padding-left: 8px
+
+.complete__picture
+  flex-shrink: 0
+
+.complete__image
+  width: 466px
+  height: 894px
+
+.complete__params
+  margin-left: 44px
+
+.complete__param
+  position: relative
+  display: flex
+  align-items: baseline
+  padding-left: 40px
+  &:hover
+    @include hover
+      background-color: $gray
+      .complete__param-picture
+        z-index: 1
+        opacity: 1
+      .complete__param-name
+        color: $red
+
+.complete__param-picture
+  position: absolute
+  top: 50%
+  left: -32px
+  z-index: -1
+  margin-top: -32px
+  opacity: 0
+
+.complete__param-image
+  border-radius: 50%
+  width: 64px
+  height: 64px
+
+.complete__param-name
+  flex-shrink: 0
+  width: 457px
+  font-size: 24px
+  line-height: 24px
+
+.complete__param-value
+  font-weight: 700
+
+.complete__param-unit
+  margin-left: 8px
+  font-size: 24px
+  line-height: 24px
+
+.complete__param-price

@@ -1,0 +1,54 @@
+-
+  const completeVariants = [
+    { name: 'База', note: 'Подходит для большинства клиентов' },
+    { name: 'Мастер', note: 'Надо брать' },
+    { name: 'Полный фарш', note: 'Для истинных ценителей удобной и надежной техники' }
+  ]
+
+  const completeParams = [
+    { img: '', name: 'Термокамера', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Дымогенератор', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Парогенератор', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Компрессор', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Ёмкость для сбора конденсата со шлангом', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Термощуп для продукта', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Термодатчик', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Решётка для продукта', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Крючок для подвешивания продукта', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Поддон для сбора жира', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Компенсаторы потока дыма и пара', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Шпагат джутовый', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Концентрат моющего средства', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Щепа ольховая', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Заслонка для наружного выхода дыма и пара', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Заслонка входа дыма наружная', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Холодильник для дыма', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Вытяжное устройство', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Улучшенное дно термокамеры', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Автоматическая заслонка', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Передвижной поддон', values: [], step: '', min: '', max: '', unit: '', price: '' },
+    { img: '', name: 'Форма для мяса', values: [], step: '', min: '', max: '', unit: '', price: '' }
+  ]
+
+.complete(data-element="complete")
+  .complete__cont.cont
+    h2.complete__title.title
+      | КОМПЛЕКТАЦИЯ
+    ul.complete__variants
+      each variant, index in completeVariants
+        li.complete__variants-item(class=!index ? 'complete__variants-item_active':'', data-element="complete__variants-item", data-variant=index)
+          span.complete__variants-name.text-big= variant.name
+          span.complete__variants-note= variant.note
+          span.complete__variants-price +14 665
+    .complete__area
+      .complete__picture
+        img.complete__image(src="https://via.placeholder.com/466x894", loading="lazy")
+      ul.complete__params
+        each param, index in completeParams
+          li.complete__param
+            picture.complete__param-picture
+              img.complete__param-image(src=`https://via.placeholder.com/64?text=${index + 1}`, loading="lazy")
+            span.complete__param-name= param.name
+            span.complete__param-value.text-big 990
+            span.complete__param-unit шт
+            span.complete__param-price +26 775
