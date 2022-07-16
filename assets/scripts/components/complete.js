@@ -17,18 +17,10 @@ function initComplete () {
   function activateVariant (index) {
     for (let i = 0, len = buttonsVariants.length; i < len; i++) {
       if (i === index) {
-        activateButtonVariants(buttonsVariants[i])
+        buttonsVariants[i].classList.add('complete__variants-item_active')
       } else {
-        deactivateButtonVariants(buttonsVariants[i])
+        buttonsVariants[i].classList.remove('complete__variants-item_active')
       }
     }
   }
-}
-
-function activateButtonVariants (button) {
-  button.classList.add('complete__variants-item_active')
-}
-
-function deactivateButtonVariants (button) {
-  button.classList.remove('complete__variants-item_active')
 }
